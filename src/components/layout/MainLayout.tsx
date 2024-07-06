@@ -1,4 +1,4 @@
-import { Flex, Layout, Menu, MenuProps } from 'antd';
+import { Layout, Menu, MenuProps } from 'antd';
 
 const { Header, Content, Footer, Sider } = Layout;
 
