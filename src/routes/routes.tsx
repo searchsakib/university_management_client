@@ -4,6 +4,14 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import { adminPaths } from './admin.routes';
 import { routeGenerator } from '../components/ui/routesGenerator';
+import { facultyPaths } from './faculty.routes';
+import { studentPaths } from './student.routes';
+
+// type TRouter = {
+//   path: string;
+//   element: ReactNode;
+//   children?: ReactNode[];
+// };
 
 const router = createBrowserRouter([
   {
@@ -18,12 +26,12 @@ const router = createBrowserRouter([
   {
     path: '/faculty',
     element: <App />,
-    children: routeGenerator(adminPaths),
+    children: routeGenerator(facultyPaths),
   },
   {
     path: '/student',
     element: <App />,
-    children: routeGenerator(adminPaths),
+    children: routeGenerator(studentPaths),
   },
   {
     path: '/login',
