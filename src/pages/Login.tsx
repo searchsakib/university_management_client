@@ -19,7 +19,6 @@ const Login = () => {
     login(userInfo);
   };
   console.log('This is data=>', data);
-  console.log('This is login=>', login);
   console.log('This is error=>', error);
 
   return (
