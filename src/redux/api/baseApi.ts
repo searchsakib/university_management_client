@@ -13,5 +13,3 @@ export const baseApi = createApi({
     }),
   }),
 });
-
-export const { useLoginMutation } = baseApi;
