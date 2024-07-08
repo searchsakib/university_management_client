@@ -1,6 +1,6 @@
 import { Layout, Menu } from 'antd';
 import { adminPaths } from '../../routes/admin.routes';
-import { sidebarItemsGenerator } from '../ui/sidebarItemsGenerator';
+import { sidebarItemsGenerator } from '../utils/sidebarItemsGenerator';
 import { facultyPaths } from '../../routes/faculty.routes';
 import { studentPaths } from '../../routes/student.routes';
 

@@ -3,7 +3,7 @@ import App from '../App';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import { adminPaths } from './admin.routes';
-import { routeGenerator } from '../components/ui/routesGenerator';
+import { routeGenerator } from '../components/utils/routesGenerator';
 import { facultyPaths } from './faculty.routes';
 import { studentPaths } from './student.routes';
 

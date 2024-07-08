@@ -1,25 +1,35 @@
 import { Button } from 'antd';
 import { useForm } from 'react-hook-form';
 import { useLoginMutation } from '../redux/features/auth/authApi';
+import { useAppDispatch } from '../redux/hooks';
+import { setUser } from '../redux/features/auth/authSlice';
+import { verifyToken } from '../components/utils/verifyToken';
 
 const Login = () => {
+  const dispatch = useAppDispatch();
   const { register, handleSubmit } = useForm({
     defaultValues: {
       id: 'A-0001',
       password: 'Tester',
     },
   });
-  const [login, { data, error }] = useLoginMutation();
+  const [login, { error }] = useLoginMutation();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const userInfo = {
       id: data?.id,
       password: data?.password,
     };
-    login(userInfo);
+
+    const res = await login(userInfo).unwrap();
+    const decoded = verifyToken(res?.data?.accessToken);
+    dispatch(
+      setUser({
+        user: decoded,
+        token: res?.data?.accessToken,
+      })
+    );
   };
-  console.log('This is data=>', data);
-  console.log('This is error=>', error);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
