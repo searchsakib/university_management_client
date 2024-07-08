@@ -1,7 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+export type Tuser = {
+  userId: string;
+  role: string;
+  iat: number;
+  exp: number;
+};
+
 type TInitialAuthState = {
-  user: null | object;
+  user: null | Tuser;
   token: null | object;
 };
 
